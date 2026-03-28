@@ -36,17 +36,19 @@
     <p id="hero-subtitle" class="text-2xl text-zinc-400 mt-6 max-w-2xl mx-auto"></p>
     
     <div class="mt-12 flex flex-col md:flex-row gap-4 justify-center">
-      <a href="https://creatordash.vercel.app" target="_blank" class="px-10 py-5 bg-zinc-800 hover:bg-zinc-700 rounded-3xl text-xl font-semibold flex items-center justify-center gap-3">
+      <!-- Botón Calculadora -->
+      <a href="https://creatordash.vercel.app" target="_blank" 
+         class="px-10 py-5 bg-zinc-800 hover:bg-zinc-700 rounded-3xl text-xl font-semibold flex items-center justify-center gap-3">
         <i class="fa-solid fa-calculator"></i>
         Probar la calculadora gratis
       </a>
       
-      <a href="https://creatordash-dashboard-oqtn.vercel.app" target="_blank" 
+      <!-- Botón Dashboard (CORREGIDO) -->
+      <a href="https://creatordash-dashboard.vercel.app" target="_blank" 
          class="px-10 py-5 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-3xl text-xl font-semibold hover:scale-105 transition" id="cta-button"></a>
     </div>
   </section>
 
-  <!-- Beneficios (mismo que antes) -->
   <section class="bg-zinc-900 py-20">
     <div class="max-w-6xl mx-auto px-6 grid grid-cols-3 gap-8">
       <div class="text-center">
@@ -73,7 +75,6 @@
 
   <script>
     let currentLang = 'es';
-
     const translations = {
       es: {
         heroTitle: "El dashboard que todo creador de Latam y Brasil estaba esperando",
