@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CreatorDash • El dashboard para creadores que viven de sus brand deals</title>
+  <title>CreatorDash • Dashboard para creadores Latam & Brasil</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <style>
-    body { font-family: 'Inter', system_ui, sans-serif; }
-  </style>
+  <style>body { font-family: 'Inter', system_ui, sans-serif; }</style>
 </head>
 <body class="bg-zinc-950 text-zinc-100">
 
@@ -16,32 +14,34 @@
   <nav class="border-b border-zinc-800 bg-zinc-900">
     <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <span class="text-3xl">🚀</span>
-        <h1 class="text-2xl font-bold bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">CreatorDash</h1>
+        <!-- Logo original -->
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="20" fill="#6B21A8" fill-opacity="0.15"/>
+          <circle cx="24" cy="24" r="14" stroke="#A78BFA" stroke-width="3"/>
+          <path d="M12 24C12 18 16 14 24 14C32 14 36 18 36 24C36 30 32 34 24 34C16 34 12 30 12 24Z" stroke="#C026D3" stroke-width="3"/>
+          <text x="24" y="29" text-anchor="middle" font-size="18" font-weight="bold" fill="#A78BFA">$</text>
+          <path d="M32 14 L38 10 L38 18 Z" fill="#C026D3"/>
+        </svg>
+        <h1 class="text-3xl font-bold bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">CreatorDash</h1>
       </div>
-      <a href="https://creatordash.vercel.app" target="_blank" class="text-sm font-medium px-6 py-3 bg-white text-zinc-900 rounded-2xl hover:scale-105 transition">Ir a la Calculadora Gratis →</a>
+      <div class="flex items-center gap-4">
+        <select id="language-select" onchange="changeLanguage()" class="bg-zinc-900 border border-zinc-700 rounded-2xl px-4 py-2">
+          <option value="es">Español</option>
+          <option value="pt">Português</option>
+        </select>
+        <a href="https://creatordash.vercel.app" target="_blank" class="text-sm font-medium px-6 py-3 bg-white text-zinc-900 rounded-2xl hover:scale-105 transition">Ir al Dashboard</a>
+      </div>
     </div>
   </nav>
 
   <!-- Hero -->
   <section class="max-w-6xl mx-auto px-6 py-20 text-center">
-    <h1 class="text-6xl font-bold leading-tight">
-      El dashboard que todo creador<br>de Latam y Brasil estaba esperando
-    </h1>
-    <p class="text-2xl text-zinc-400 mt-6 max-w-2xl mx-auto">
-      Calculá tus tarifas, cerrá deals, seguí tus ingresos, optimizá impuestos y escalá tu carrera como nunca.
-    </p>
+    <h1 id="hero-title" class="text-6xl font-bold leading-tight"></h1>
+    <p id="hero-subtitle" class="text-2xl text-zinc-400 mt-6 max-w-2xl mx-auto"></p>
     <div class="mt-10 flex justify-center gap-4">
       <a href="https://creatordash.vercel.app" target="_blank" 
-         class="px-10 py-5 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-3xl text-xl font-semibold hover:scale-105 transition">
-        Probar CreatorDash GRATIS 14 días
-      </a>
-      <a href="https://creatordash.vercel.app" target="_blank" 
-         class="px-10 py-5 border border-zinc-700 rounded-3xl text-xl font-semibold hover:bg-zinc-900 transition">
-        Ver la calculadora primero
-      </a>
+         class="px-10 py-5 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-3xl text-xl font-semibold hover:scale-105 transition" id="cta-button"></a>
     </div>
-    <p class="text-zinc-400 mt-6">Sin tarjeta • Cancela cuando quieras</p>
   </section>
 
   <!-- Beneficios -->
@@ -49,31 +49,19 @@
     <div class="max-w-6xl mx-auto px-6 grid grid-cols-3 gap-8">
       <div class="text-center">
         <div class="text-5xl mb-4">💰</div>
-        <h3 class="text-2xl font-semibold">Cobrá lo que valés</h3>
-        <p class="text-zinc-400 mt-3">Nunca más cobres de menos. La calculadora + seguimiento de deals te ayudan a cobrar tarifas reales de Latam y Brasil.</p>
+        <h3 id="benefit1-title" class="text-2xl font-semibold"></h3>
+        <p id="benefit1-text" class="text-zinc-400 mt-3"></p>
       </div>
       <div class="text-center">
         <div class="text-5xl mb-4">📊</div>
-        <h3 class="text-2xl font-semibold">Control total de tus ingresos</h3>
-        <p class="text-zinc-400 mt-3">Seguí ROI, impuestos, gastos y ganancias netas en un solo lugar.</p>
+        <h3 id="benefit2-title" class="text-2xl font-semibold"></h3>
+        <p id="benefit2-text" class="text-zinc-400 mt-3"></p>
       </div>
       <div class="text-center">
         <div class="text-5xl mb-4">🚀</div>
-        <h3 class="text-2xl font-semibold">Estrategias reales 2025</h3>
-        <p class="text-zinc-400 mt-3">Live commerce, IA, brand deals automáticos y más. Todo pensado para creadores latinos.</p>
+        <h3 id="benefit3-title" class="text-2xl font-semibold"></h3>
+        <p id="benefit3-text" class="text-zinc-400 mt-3"></p>
       </div>
-    </div>
-  </section>
-
-  <!-- CTA Final -->
-  <section class="py-20 text-center bg-gradient-to-b from-transparent via-violet-900/10 to-transparent">
-    <div class="max-w-xl mx-auto px-6">
-      <h2 class="text-4xl font-bold">¿Listo para vivir de tus contenidos?</h2>
-      <p class="text-xl text-zinc-400 mt-4">Miles de creadores ya están usando CreatorDash. Vos podés ser el próximo.</p>
-      <a href="https://creatordash.vercel.app" target="_blank" 
-         class="mt-10 inline-block px-12 py-6 bg-white text-zinc-900 text-2xl font-semibold rounded-3xl hover:scale-105 transition">
-        Empezar gratis 14 días →
-      </a>
     </div>
   </section>
 
@@ -81,5 +69,49 @@
     CreatorDash © 2025 • Hecho con ❤️ para creadores de Latam y Brasil
   </footer>
 
+  <script>
+    let currentLang = 'es';
+
+    const translations = {
+      es: {
+        heroTitle: "El dashboard que todo creador de Latam y Brasil estaba esperando",
+        heroSubtitle: "Calculá tus tarifas, cerrá deals, seguí tus ingresos y escalá tu carrera como nunca.",
+        ctaButton: "Probar CreatorDash GRATIS 14 días →",
+        benefit1Title: "Cobrá lo que valés",
+        benefit1Text: "Nunca más cobres de menos. La calculadora + seguimiento de deals te ayudan a cobrar tarifas reales.",
+        benefit2Title: "Control total de tus ingresos",
+        benefit2Text: "Seguí ROI, impuestos, gastos y ganancias netas en un solo lugar.",
+        benefit3Title: "Estrategias reales 2025",
+        benefit3Text: "Live commerce, IA, brand deals automáticos y más."
+      },
+      pt: {
+        heroTitle: "O dashboard que todo criador da Latam e Brasil estava esperando",
+        heroSubtitle: "Calcule suas tarifas, feche deals, acompanhe seus rendimentos e escale sua carreira como nunca.",
+        ctaButton: "Experimentar CreatorDash GRÁTIS 14 dias →",
+        benefit1Title: "Cobrar o que você vale",
+        benefit1Text: "Nunca mais cobre menos do que vale. Calculadora + rastreamento de deals te ajudam a cobrar tarifas reais.",
+        benefit2Title: "Controle total dos seus rendimentos",
+        benefit2Text: "Acompanhe ROI, impostos, gastos e lucro líquido em um só lugar.",
+        benefit3Title: "Estratégias reais 2025",
+        benefit3Text: "Live commerce, IA, brand deals automáticos e muito mais."
+      }
+    };
+
+    function changeLanguage() {
+      currentLang = document.getElementById('language-select').value;
+      const t = translations[currentLang];
+      document.getElementById('hero-title').textContent = t.heroTitle;
+      document.getElementById('hero-subtitle').textContent = t.heroSubtitle;
+      document.getElementById('cta-button').textContent = t.ctaButton;
+      document.getElementById('benefit1-title').textContent = t.benefit1Title;
+      document.getElementById('benefit1-text').textContent = t.benefit1Text;
+      document.getElementById('benefit2-title').textContent = t.benefit2Title;
+      document.getElementById('benefit2-text').textContent = t.benefit2Text;
+      document.getElementById('benefit3-title').textContent = t.benefit3Title;
+      document.getElementById('benefit3-text').textContent = t.benefit3Text;
+    }
+
+    window.onload = () => changeLanguage();
+  </script>
 </body>
 </html>
